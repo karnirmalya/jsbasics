@@ -4,19 +4,24 @@ const coding = ["js", "ruby", "java", "python", "cpp"]
 //     console.log(val);
 // } )
 
+//arrow function
+
 // coding.forEach( (item) => {
 //     console.log(item);
 // } )
 
+//  Function Explicitly defined
 // function printMe(item){
 //     console.log(item);
 // }
 
-// coding.forEach(printMe)
+// coding.forEach(printMe) //only reference passed
 
 // coding.forEach( (item, index, arr)=> {
 //     console.log(item, index, arr);
 // } )
+
+//Array of objects
 
 const myCoding = [
     {
@@ -35,5 +40,6 @@ const myCoding = [
 
 myCoding.forEach( (item) => {
     
-    console.log(item.languageName);
+    console.log(item.languageName , ":- " , item.languageFileName);
+   
 } )
