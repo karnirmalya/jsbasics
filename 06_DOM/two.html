@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM</title>
+  </head>
+  <body style="background-color: #212121; color: aqua">
+    <div class="parent">//0 text
+        <!-- this is a comment --> //3 text
+      <div class="day">MONDAY</div>//5 text
+      <div class="day">TUESDAY</div>//7 text
+      <div class="day">WEDNESDAY</div>//9 text
+
+      <div class="day">THRUSDAY</div>//11 text
+    </div>
+    <p>DOM is dome a little bit</p>
+  </body>
+  <script>
+    const parent = document.querySelector(".parent");
+    // console.log(parent);
+    // console.log(parent.children);
+    // console.log(parent.children[2].innerHTML);
+
+    // for (let i = 0; i < parent.children.length; i++) {
+    //   console.log(parent.children[i].innerHTML);
+    // }
+    parent.children[1].style.color = "orange";
+    // console.log(parent.firstElementChild);
+    // console.log(parent.lastElementChild);
+    const dayOne = document.querySelector(".day");
+    console.log(dayOne);
+
+    console.log(dayOne.parentElement);
+    console.log(dayOne.nextElementSibling);
+    console.log(dayOne.nextSibling);
+    console.log("NODES: ",parent.childNodes);
+    
+
+  </script>
+</html>

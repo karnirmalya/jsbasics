@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>coding with NK</title>
+  </head>
+  <body style="background-color: #212121; color: aqua">
+    <ul class="language">
+      <li>Javascript</li>
+    </ul>
+  </body>
+  <script>
+    //add one more list item
+    //by designing function
+
+    //for smaller project (Because in innerHTML we traverse throughout the whole document)
+    function addLanguage(langName) {
+      const liItem = document.createElement("li");
+      liItem.innerHTML = `${langName}`;
+      document.querySelector(".language").appendChild(liItem);
+    }
+    addLanguage("python");
+    addLanguage("java");
+
+    //for bigger project
+    function addOptiLanguage(langName) {
+      const liItem = document.createElement("li");
+      const addText = document.createTextNode(langName);
+      liItem.appendChild(addText);
+      document.querySelector(".language").appendChild(liItem);
+    }
+    addOptiLanguage("Golang");
+
+    //EDIT
+  
+    const secondLang = document.querySelector("li:nth-child(2)")
+    // secondLang.innerHTML = "MOJO"
+    const newli = document.createElement('li')
+    newli.textContent = "JOJO"
+    secondLang.replaceWith(newli)
+    
+
+
+  </script>
+</html>
