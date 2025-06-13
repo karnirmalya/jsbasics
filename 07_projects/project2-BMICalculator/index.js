@@ -21,15 +21,16 @@ function calculateBMI() {
     const BMI = (weight / ((height * height) / 10000)).toFixed(2);
     let message = '';
 
-    if (BMI < 18.5) {
+    if (BMI <= 18.5) {
       message = 'You are <strong>Underweight</strong>.';
-    } else if (BMI < 24.9) {
+    } else if (BMI < 24.9 && BMI > 18.5) {
       message = 'You have a <strong>Normal weight</strong>.';
-    } else if (BMI < 29.9) {
+    } else if (BMI >= 24.9) {
       message = 'You are <strong>Overweight</strong>.';
-    } else {
-      message = 'You are <strong>Obese</strong>.';
-    }
+    } 
+    //else {
+    //   message = 'You are <strong>Obese</strong>.';
+    // }
 
     result.innerHTML = `Your BMI is <strong>${BMI}</strong><br>${message}`;
   });

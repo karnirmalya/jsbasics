@@ -1,0 +1,167 @@
+/* Reset & Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  height: 100vh;
+  background: linear-gradient(135deg, #020c1b, #001f3f);
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+}
+
+/* === Animated Background Question Marks === */
+body::before {
+  content: "?? ?? ?? ?? ?? ?? ?? ?? ??";
+  position: absolute;
+  font-size: 6rem;
+  white-space: nowrap;
+  color: rgba(0, 255, 0, 0.03);
+  top: 0;
+  left: 0;
+  width: 300%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+  animation: matrixFloat 90s linear infinite;
+}
+
+@keyframes matrixFloat {
+  0% {
+    transform: translateX(0) translateY(0);
+  }
+  100% {
+    transform: translateX(-50%) translateY(-10%);
+  }
+}
+
+/* Card Wrapper */
+.wrapper {
+  z-index: 1;
+  background: rgba(0, 255, 255, 0.05);
+  border: 1px solid rgba(0, 255, 255, 0.15);
+  border-radius: 15px;
+  padding: 40px;
+  max-width: 500px;
+  width: 100%;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.1);
+  text-align: center;
+  animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Headings */
+h1 {
+  font-size: 2rem;
+  color: #00ffc3;
+  text-shadow: 0 0 10px #00ffc3;
+  margin-bottom: 15px;
+}
+
+p {
+  margin: 10px 0;
+  font-size: 1rem;
+  color: #c2f0f5;
+}
+
+/* Form Styling */
+.form {
+  margin-top: 25px;
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+  color: #81f7ff;
+  font-weight: bold;
+}
+
+input[type="number"] {
+  padding: 10px;
+  width: 100%;
+  max-width: 300px;
+  background: #011c2c;
+  border: none;
+  border-radius: 8px;
+  color: #00ffee;
+  font-size: 1rem;
+  outline: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.2);
+}
+
+input[type="number"]:focus {
+  box-shadow: 0 0 20px #00ffc3;
+  transform: scale(1.03);
+}
+
+/* Submit Button */
+.guessSubmit {
+  margin-top: 15px;
+  padding: 10px 25px;
+  background: #00ffc3;
+  color: #002b36;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  box-shadow: 0 0 10px #00ffc355;
+  transition: all 0.3s ease;
+}
+
+.guessSubmit:hover {
+  background: #00ffcc;
+  box-shadow: 0 0 20px #00ffc3cc;
+  transform: scale(1.05);
+}
+
+/* Result Area */
+.resultParas {
+  margin-top: 30px;
+  background: rgba(0, 255, 255, 0.05);
+  padding: 15px;
+  border-radius: 10px;
+  border: 1px solid rgba(0, 255, 255, 0.1);
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.1);
+}
+
+.resultParas p {
+  font-size: 1.1rem;
+  color: #ccfaff;
+}
+
+.lowOrHi {
+  margin-top: 15px;
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: #00e676;
+  animation: hintPulse 2s ease-in-out infinite;
+}
+
+@keyframes hintPulse {
+  0% {
+    color: #00e676;
+  }
+  100% {
+    color: #1aff66;
+  }
+}

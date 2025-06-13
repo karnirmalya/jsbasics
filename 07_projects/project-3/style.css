@@ -1,0 +1,82 @@
+/* Reset default styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(-45deg, #0f0c29, #302b63, #24243e);
+  background-size: 600% 600%;
+  animation: backgroundShift 15s ease infinite;
+}
+
+/* Background gradient animation */
+@keyframes backgroundShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Main Center Container */
+.center {
+  text-align: center;
+  padding: 40px 60px;
+  border-radius: 20px;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 25px rgba(0, 255, 255, 0.3);
+  animation: fadeIn 1.5s ease-out forwards;
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Banner text */
+#banner span {
+  display: inline-block;
+  font-size: 1.6rem;
+  color: #00ffe7;
+  text-shadow: 0 0 10px #00ffe7;
+  margin-bottom: 15px;
+  animation: glowText 3s infinite alternate;
+}
+
+@keyframes glowText {
+  0% { text-shadow: 0 0 10px #00ffe7; }
+  100% { text-shadow: 0 0 20px #00ffe7, 0 0 30px #00ffe7; }
+}
+
+/* Clock display box */
+.clock-box {
+  margin-top: 20px;
+  padding: 25px 40px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 2px solid #ff00cc;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(255, 0, 204, 0.4);
+  display: inline-block;
+  animation: glowBox 2s infinite alternate;
+}
+
+@keyframes glowBox {
+  0% { box-shadow: 0 0 15px rgba(255, 0, 204, 0.3); }
+  100% { box-shadow: 0 0 30px rgba(255, 0, 204, 0.6); }
+}
+
+/* Clock Text */
+#clock {
+  font-size: 3.5rem;
+  color: #ffffff;
+  letter-spacing: 3px;
+  text-shadow: 0 0 20px #ff00cc, 0 0 30px #ff00cc;
+}
+
