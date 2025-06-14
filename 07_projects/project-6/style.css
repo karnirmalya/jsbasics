@@ -1,0 +1,9 @@
+body,#start,#stop{
+    background-color: rgb(61, 59, 59);
+    color: rgb(24, 202, 202);
+}
+#start,#stop{
+    background-color: blueviolet;
+    height: 20px;
+    width: 40px;
+}
