@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>User Card</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #1e1e2f;
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .card {
+      background: #2e2e3e;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+      text-align: center;
+      width: 300px;
+    }
+
+    .card img {
+      border-radius: 50%;
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+      margin-bottom: 15px;
+    }
+
+    .followers {
+      font-size: 1.2em;
+      margin: 10px 0;
+    }
+
+    .btn {
+      background: #4caf50;
+      color: white;
+      padding: 10px 16px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      
+      transition: background 0.3s;
+    }
+
+    .btn:hover {
+      background: #036f08;
+      transform: scale(1.2) ;
+       transition: transform 0.5s;
+    }
+
+    /* Custom Modal Style */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.6);
+      justify-content: center;
+      align-items: center;
+    }
+
+    .modal-content {
+      background: #333;
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+      color: #fff;
+    }
+
+    .modal-content img {
+      width: 100px;
+      border-radius: 50%;
+      margin-bottom: 10px;
+    }
+
+    .close-btn {
+      margin-top: 10px;
+      background: #e74c3c;
+      padding: 8px 12px;
+      border: none;
+      border-radius: 6px;
+      color: #fff;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <img src="hitesh.png" alt="Profile Picture" />
+    <h2>Hitesh Chouhary</h2>
+    <div class="followers">Followers: 44259</div>
+    <button class="btn" onclick="showData()">Get Data</button>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal" id="dataModal">
+    <div class="modal-content">
+      <img id="modalImage" src="" alt="User Image">
+      <h3 id="modalName"></h3>
+      <p id="modalFollowers"></p>
+      <button class="close-btn" onclick="closeModal()">Close</button>
+    </div>
+  </div>
+
+  <script>
+    function showData() {
+      const userData = {
+        name: "Hitesh Choudhary",
+        followers: 44259,
+        image: "hitesh.png"
+      };
+
+      document.getElementById("modalImage").src = userData.image;
+      document.getElementById("modalName").textContent = userData.name;
+      document.getElementById("modalFollowers").textContent = `Followers: ${userData.followers}`;
+
+      document.getElementById("dataModal").style.display = "flex";
+    }
+
+    function closeModal() {
+      document.getElementById("dataModal").style.display = "none";
+    }
+  </script>
+
+</body>
+</html>

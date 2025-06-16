@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>XMLhttprequset</title>
+  </head>
+  <body style="background-color: rgb(65, 63, 63)">
+    <img src="readtstate.png" alt="table for XMLhttprequest.readystate " />
+  </body>
+  <script>
+    const requestUrl = "https://api.github.com/users/hiteshchoudhary";
+    const xhr = new XMLHttpRequest();
+    xhr.open("GET", requestUrl);
+    xhr.onreadystatechange = function () {
+      if (xhr.readyState === 4) {
+        const data = JSON.parse(this.responseText);  //parse strings to JSON
+        console.log(data);
+        console.log(typeof data);
+        console.log(data.avatar_url);
+        console.log(data.followers);
+        
+
+      }
+    };
+
+    xhr.send();
+  </script>
+</html>
