@@ -1,107 +1,116 @@
 // fetch('http://something.com').then().catch().finally()
 
-const promiseOne = new Promise((resolve, reject) => {
-  //Do an asyc task
-  //DB calls , cryptography related , network call related
-  setTimeout(() => {
-    console.log("Async task is completed");
-    resolve();
-  }, 100);
-});
+// const promiseOne = new Promise((resolve, reject) => {
+//   //Do an asyc task
+//   //DB calls , cryptography related , network call related
+//   setTimeout(() => {
+//     console.log("Async task is completed");
+//     resolve();
+//   }, 100);
+// });
 
-promiseOne.then(() => {
-  console.log("promise consumed");
-}); //coonection with resolve
+// promiseOne.then(() => {
+//   console.log("promise consumed");
+// }); //coonection with resolve
 
-new Promise((resolve, reject) => {
-  setTimeout(() => {
-    console.log("Async task-2 is completed");
-    resolve();
-  }, 1000);
-}).then(function () {
-  console.log("Async-2 resolved");
-});
+// new Promise((resolve, reject) => {
+//   setTimeout(() => {
+//     console.log("Async task-2 is completed");
+//     resolve()
+//   }, 1000);
+// }).then(function () {
+//   console.log("Async-2 resolved");
+// }).then(()=>{
+//   console.log('HELLO');
+// })
 
-const promiseThree = new Promise(function (resolve, reject) {
-  setTimeout(() => {
-    resolve({ username: "chai", email: "myemail23451@gmail.com" });
-  }, 1000);
-});
-promiseThree.then(function (user) {
-  console.log(user);
-});
+// const promiseThree = new Promise(function (resolve, reject) {
+//   setTimeout(() => {
+//     resolve({ username: "chai", email: "myemail23451@gmail.com" });
+//   }, 1000);
+// });
+// promiseThree.then(function (user) {
+//   console.log(user);
+//   return user
+// }).then((user)=>{
+//   for (const key in user) {
+//    console.log(user[key])
+//   }
+// })
 
-const promiseFour = new Promise((resolve, reject) => {
-  setTimeout(() => {
-    let error = false;
-    if (!error) {
-      resolve({ username: "Nirmalya", password: "rsnnit1242@" });
-    } else {
-      reject("ERROR: something went wrong");
-    }
-  }, 1000);
-});
+// const promiseFour = new Promise((resolve, reject) => {
+//   setTimeout(() => {
+//     let error = false;
+//     if (!error) {
+//       resolve({ username: "Nirmalya", password: "rsnnit1242@" });
+//     } else {
+//       reject("ERROR: something went wrong");
+//     }
+//   }, 10);
+// });
 
 //then :- resolve
 //catch:- reject
-const userName = promiseFour.then(function(user){
-  console.log(user)
-  return user.username
-})
+// const userName = promiseFour.then(function(user){
+//   console.log(user)
+//   return user.username
+// })
 
-console.log(userName);
+// console.log(userName);
+
 
 // promiseFour.then().then().catch()
-promiseFour
-  .then(function (user) {
-    console.log(user);
-    return user.username;
-  })
-  .then((username) => {
-    console.log(username);
-  })
-  .catch((error) => {
-    console.log(error);
-  });
+// promiseFour
+//   .then(function (user) {
+//     console.log(user);
+//     return user.username;
+//   })
+//   .then((username) => {
+//     console.log(username);
+//   })
+//   .catch((error) => {
+//     console.log(error);
+//   });
 
-promiseFour
-  .then(function (user) {
-    console.log(user);
-    return user.username;
-  })
-  .then((username) => {
-    console.log(username);
-  })
-  .catch((error) => {
-    console.log(error);
-  })
-  .finally(() => {
-    console.log("THe Promise is either resolved or rejected");
-  });
+// promiseFour
+//   .then(function (user) {
+//     console.log(user);
+//     return user.username;
+//   })
+//   .then((username) => {
+//     console.log(username);
+//   })
+//   .catch((error) => {
+//     console.log(error);
+//   })
+//   .finally(() => {
+//     console.log("THe Promise is either resolved or rejected");
+//   });
 
-const promiseFive = new Promise(function (resolve, reject) {
-  setTimeout(() => {
-    let error = true;
-    // let error = false;
-    if (!error) {
-      resolve({ username: "JAVASCRIPT", password: "ronir1dr34@" });
-    } else {
-      reject("ERROR: JS went wrong");
-    }
-  }, 1000);
-});
+// const promiseFive = new Promise(function (resolve, reject) {
+//   setTimeout(() => {
+//     // let error = true;
+//     let error = false;
+//     if (!error) {
+//       resolve({ username: "JAVASCRIPT", password: "ronir1dr34@" });
+//     } else {
+//       reject("ERROR: JS went wrong");
+//     }
+//   }, 1000);
+// });
 
-// async , await :- can't handle error directly we use try and catch to find error 
-//async :-wait for completion of work
-async function consumePromiseFive() {
-  try {
-    const response = await promiseFive;
-    console.log(response);
-  } catch (error) {
-    console.log(error);
-  }
-}
-consumePromiseFive();
+// // async , await :- can't handle error directly we use try and catch to find error
+// //async :- wait for completion of work
+// async function consumePromiseFive() {
+//   try {
+//     const response = await promiseFive;
+//     console.log(response);
+//   } 
+// catch (error) {
+//     console.log(error);
+//   }
+// }
+// consumePromiseFive();
 
 // async function getAllUsers() {
 //   try {
@@ -127,7 +136,6 @@ consumePromiseFive();
 //     console.log('error');
 //   });
 
-
 fetch("https://api.github.com/users/hiteshchoudhary")
   .then((response) => {
     return response.json();
@@ -138,9 +146,3 @@ fetch("https://api.github.com/users/hiteshchoudhary")
   .catch(() => {
     console.log('error');
   });
-
-
-
-
-
-
